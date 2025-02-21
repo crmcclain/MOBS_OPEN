@@ -49,22 +49,31 @@ data_size_all <-  bind_rows(data_size_temp1, data_size_temp2, data_size_temp3, d
 # get unique AphiaIDs
 aphia <- unique(data_size_all$valid_AphiaID)
 
-# pull classification for all spcies--this is a slow process with >85K AphiaIDs and can take longer than 2:42 minutes
-taxonomy <- wm_classification_(id = aphia)
+# pull classification for all spcies--this is a slow process with >85K AphiaIDs. Just for convenience and to try and prevent timeout errors, we will use a loop to get the classificaiotn for groups of 500 species at a time. Each 500 species chunk will take longer than 1.5 minutes each. The total routine can take longer than 5 hours to run.
+
+chunks <- seq(1,length(aphia), 500) # the starting index for the chunks
+n.chunks <- length(chunks)
+chunks <- c(chunks, length(aphia)) # adding the total number ids
+# here we go with a simple for loop
+taxonomy <- data.frame() # initalize the variable
+for(i in 1:n.chunks) {
+	these.taxa <- wm_classification_(id = aphia[chunks[i]:(chunks[i+1]-1)])
+	taxonomy <- rbind(taxonomy, these.taxa)
+}
 
 # drop the non-canonical ranks
 taxonomy <- subset(taxonomy, is.element(rank, c('Phylum','Class','Order','Family','Genus','Species')))
 
 # convert worrms output to a dataframe with columns of AphiaID and each taxonomic rank
 taxonomy.df <- dcast(taxonomy, id~rank, value.var="scientificname")
-colnames(taxonomy.df)[1] <- "AphiaID" # change column name to match data_size_all
+colnames(taxonomy.df)[1] <- "valid_AphiaID" # change column name to match data_size_all
 
 # add taxonomy to original data frame
-data_size_all <- merge(data_size_all, taxonomy.df, by="AphiaID", all= T)
+data_size_all <- merge(data_size_all, taxonomy.df, by="valid_AphiaID", all= T)
 
-# finally, to make column names match those of the combined data sets
-colnames(data_size_all)[olnames(data_size_all) == "Species"] <- "scientificName"
-colnames(data_size_all)[olnames(data_size_all) == "AphiaID"] <- "valid_aphiaID"
+# finally, make column names match those of the combined data sets
+colnames(data_size_all)[colnames(data_size_all) == "Species"] <- "scientificName"
+
 
 ```
 
