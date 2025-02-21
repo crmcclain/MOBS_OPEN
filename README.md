@@ -1,11 +1,11 @@
 # The Marine Organismal Body Size (MOBS) Database
 
-The file *data\_all\_112224.csv* provides data in MOBS as of 11-22-24 with current taxonomic information and species names pulled from the World Register of Marine Species (WoRMS). You can downloadn this file, read it into your preferred software and begin analyses. This file has 181,532 rows and 14 columns. The columns are as follows:
+The file *data\_all\_112224.csv* provides data in MOBS as of 11-22-24 with current taxonomic information and species names pulled from the World Register of Marine Species (WoRMS; [https://www.marinespecies.org/](https://www.marinespecies.org/)). You can downloadn this file, read it into your preferred software and begin analyses. This file has 181,532 rows and 14 columns. The columns are as follows:
 
 |Column Name|Column Description|
 |---|---|
 |Order\_Added|order in which record was added to the database |
-|valid\_aphiaID|AphiaID of the valid taxon name |
+|valid\_aphiaID|AphiaID of the valid taxon name linking it to the taxonomy in WoRMS|
 |phylum| phylum the species belongs to|
 |class| class the species belongs to|
 |order| order the species belongs to|
@@ -19,12 +19,16 @@ The file *data\_all\_112224.csv* provides data in MOBS as of 11-22-24 with curre
 |Size\_Ref| reference for the sizes measurement(s)|
 |Date\_Added| date record was added to database|
 
-### Updating taxonomy from WoRMS 
-Taxonomy is in constant flux and synonomies are continuusly being added to WoRMS. The most up to date version of MOBS is provided as six seperate data files.  
-Each row of MOBS includes an AphiaID (linking it to the species name and taxonomy in WoRMS, [https://www.marinespecies.org/](https://www.marinespecies.org/)), 
-length (cm), width/diameter (cm), height (cm), a note field to indicate other information about the measurement, and the reference for the size data. 
+References are provided in both plain text (*Size\_Data\_Reference\_Plain.txt*) and RIS formats (*Size\_Data\_Reference\_RIS.txt*).
 
-References are provided in both plain text (*Size\_Data\_Reference\_Plain.txt*) and RIS formats (*Size\_Data\_Reference\_RIS.txt*). The size seperate data files can be
+Most species are represented by a single row, however, some have more than one row, thus more than one size measurement. 
+
+### Updating taxonomy from WoRMS 
+Taxonomy is in constant flux and synonomies are continuously being added to WoRMS. If you would like to pull the most recent taxonomy from WoRMS, you may do so using the six files named *mobs.pt1.csv*, *mobs.pt2.csv*, etc. These files have the same columns as *data\_all\_112224.csv*, except for those related taxonomy (e.g., scientificName, phylum).
+
+Each row of MOBS includes an AphiaID (, ), length (cm), width/diameter (cm), height (cm), a note field to indicate other information about the measurement, and the reference for the size data. 
+
+ The size seperate data files can be
 combined by the following R code.
 
 ```r
