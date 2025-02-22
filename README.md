@@ -30,18 +30,16 @@ The six seperate data files can be combined. Then package worrms [https://github
 
 ```r
 # load reqired packages--these will need to be installed using install.packages() before loading the libraries
-library(dplyr) # a tidyverse package for manipulating data frames
-library(readr) # a tidyverse package for reading files
 library(worrms) # package for interacting with WoRMS
 library(reshape2) # package for transforming data frames
 
 # read in individual files
-data_size_temp1 <- readr::read_csv("mobs.pt1.csv") 
-data_size_temp2 <- readr::read_csv("mobs.pt2.csv") 
-data_size_temp3 <- readr::read_csv("mobs.pt3.csv") 
-data_size_temp4 <- readr::read_csv("mobs.pt4.csv") 
-data_size_temp5 <- readr::read_csv("mobs.pt5.csv") 
-data_size_temp6 <- readr::read_csv("mobs.pt6.csv") 
+data_size_temp1 <- read.csv("mobs.pt1.csv") 
+data_size_temp2 <- read.csv("mobs.pt2.csv") 
+data_size_temp3 <- read.csv("mobs.pt3.csv") 
+data_size_temp4 <- read.csv("mobs.pt4.csv") 
+data_size_temp5 <- read.csv("mobs.pt5.csv") 
+data_size_temp6 <- read.csv("mobs.pt6.csv") 
 
 # combine individual files into single data frame
 data_size_all <-  bind_rows(data_size_temp1, data_size_temp2, data_size_temp3, data_size_temp4, data_size_temp5, data_size_temp6) 
