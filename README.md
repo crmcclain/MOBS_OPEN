@@ -74,7 +74,8 @@ data_size_all <- merge(data_size_all, taxonomy.df, by="valid_AphiaID", all= T)
 # finally, make column names match those of the combined data sets
 colnames(data_size_all)[colnames(data_size_all) == "Species"] <- "scientificName"
 
-
+# save the data frame as an R Object for later use
+save(data_size_all, file="MOBS.RData")
 ```
 
 
