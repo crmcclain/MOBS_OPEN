@@ -49,18 +49,22 @@ aphia <- unique(data_size_all$valid_AphiaID)
 
 # pull classification for all spcies--this is a slow process with >85K AphiaIDs. Just for convenience and to try and prevent timeout errors, we will use a loop to get the classificaiotn for groups of 500 species at a time. Each 500 species chunk will take longer than 1.5 minutes each. The total routine can take longer than 5 hours to run.
 
-chunks <- seq(1,length(aphia), 500) # the starting index for the chunks
+chunks <- seq(1,length(aphia), 150) # the starting index for the chunks
 n.chunks <- length(chunks)
 chunks <- c(chunks, length(aphia)) # adding the total number ids
 # here we go with a simple for loop
-taxonomy <- data.frame() # initalize the variable
+taxonomy <- data.frame() # initialize the variable
+t0 <- Sys.time(); print(t0) # lets keep track of time!
 for(i in 1:n.chunks) {
 	these.taxa <- wm_classification_(id = aphia[chunks[i]:(chunks[i+1]-1)])
+	# drop the non-canonical ranks
+	these.taxa <- subset(these.taxa, is.element(rank, c('Phylum','Class','Order','Family','Genus','Species')))
+	
+	# bind new dataframe to existing--add the new rows
 	taxonomy <- rbind(taxonomy, these.taxa)
+	if(i %% 50 == 0) {print(chunks[i+1])} # print a note every 50 chunks (~25 minutes)
 }
-
-# drop the non-canonical ranks
-taxonomy <- subset(taxonomy, is.element(rank, c('Phylum','Class','Order','Family','Genus','Species')))
+t1 <- Sys.time(); print(t1 - t0) # how long did it take?
 
 # convert worrms output to a dataframe with columns of AphiaID and each taxonomic rank
 taxonomy.df <- dcast(taxonomy, id~rank, value.var="scientificname")
