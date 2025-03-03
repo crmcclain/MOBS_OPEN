@@ -1,0 +1,271 @@
+120/8
+install.packages("rgbif")
+install.packages("robis")
+library(rgbif)
+library(robis)
+?robis
+install.packages("mregions")
+install.packages("rmapshaper")
+?mr_shp
+library(sf)
+install.packages("wk")
+library(wk)
+install.packages("mregions2")
+install.packages("mregions2")ccg <- st_read("https://opendata.arcgis.com/datasets/de108fe659f2430d9558c20fe172638f_2.kml")
+ccg <- st_read("https://opendata.arcgis.com/datasets/de108fe659f2430d9558c20fe172638f_2.kml")
+class(ccg)
+name_backbone(name="Calopteryx splendens")
+name_backbone(name="MOllusca")
+name_backbone(name="Brachiopoda")
+name_backbone(name=c("Brachiopoda","Mollusca"))
+name_backbone_checklist(name=c("Brachiopoda","Mollusca"))
+occ_download(pred("taxonKey", 2436775))
+q()
+2.5/3
+(2.5*5+3*5)/30
+(2.5*4+3*5)/30
+(2.5*4+3*5)/27
+6.99/.17
+5.99/.51
+5.99/.15
+sqrt(0.04)
+650706+118488+79762+65399+101727
+214+398
+q()
+7*200
+q()
+7+8
+q()
+3+2.69
+(3+2.69)/2
+(2.65+2.6)/3
+q()
+students <- c("Evren","Ella","Sarah","Ashanit","Alex","Saajid","Feiyang","Jerry","Annika","Erik")
+length(students)
+sample(students)
+q()
+21*30
+21/2
+q()
+75+(75/2)
+(75/2)
+q()
+200/10000000
+200000/10000000
+240000/1000000
+3/1000
+200000/10000000
+(200000+200000*.4)/10000000
+(200000/0.4)/10000000
+200000/0.4
+(200000/0.2)/10000000
+(200000/0.6)/10000000
+(200000/0.8)/10000000
+q()
+64*3
+500+600+192
+500+600+192+3855
+15+(15*0.03)
+q()
+5/45
+40/45
+44/45
+(45-13)/45
+(60-13)/60
+(65-13)/65
+x <- 7; (x-60)/60
+x <- 7; (60-x)/60
+x <- 7; 60-x; (60-x)/60
+x <- 13; 60-x; (60-x)/60
+x <- 3; 60-x; (60-x)/60
+x <- 1; 60-x; (60-x)/60
+x <- 2; 60-x; (60-x)/60
+x <- 5; 60-x; (60-x)/60
+q()
+64*5
+64*5+400+800+665
+200*4*3
+665+200+200
+64*5*3
+1200+2400+1065+960
+5625*2+2185
+35/40
+90*18
+90*18/60
+100-12
+100-16
+100-8
+q()
+15/49
+(49-15)/49
+(49-0.5)/49
+(49-5.5+2.5)/49
+x <- (49-5.5+2.5);x/49
+x <- (49-5.5+2.5);x;x/49
+x <- (49-5.5+3.5);x;x/49
+x <- (49-7+2.5);x;x/49
+7-2.5
+x <- (49-7+2);x;x/49
+x <- (49-8.5+3.5);x;x/49
+8.5-3.5
+x <- (49-9.5+3.0);x;x/49
+x <- (49-7.5+2.0);x;x/49
+x <- (49-10.5+3.0);x;x/49
+x <- (49-9.5+2.0);x;x/49
+x <- (49-13.5+2.0);x;x/49
+x <- (49-19.0+3.0);x;x/49
+49-4.5
+49-6.5
+49-1.5
+49-11.5
+49-15
+49-16
+x <- (49-8);x;x/49
+x <- (49-8);x;x/49*20
+100-12
+25/26
+25/30
+29/30
+34.5/49
+(70.4+96.6)/2
+70.4+(100-70.4)*0.7
+70.4+(100-70.4)*0.6
+70.4+(100-70.4)*(0.6*0.96)
+0.6*0.96
+(70.4+96.6)/2
+100-70.4
+(100-70.4)*0.7
+((100-70.4)*0.7)*0.966
+70.4+((100-70.4)*0.7)*0.966
+70.4+(100-70.4)*(0.6*0.966)
+37.5/49
+64-19
+199+196+557
+q()
+89-4
+60+(60*1.25)
+60*1.25
+25/4
+56*4
+225-20*3
+225-40*3
+225-50*3
+2019-2008
+15+15+10+20+40
+2+7+5+7+7
+40-(2+7+5+7+7)
+5+9+7+9+9
+5+10+10+9+9
+2013-2024
+1892-2024
+8+7
+6.5+8
+115.98-12.45
+library(dplyr) # A staple for modern data management in R#
+library(lubridate) # Useful functions for dealing with dates#
+library(ggplot2) # The preferred library for data visualisation#
+library(tidync) # For easily dealing with NetCDF data#
+library(rerddap) # For easily downloading subsets of data#
+library(doParallel)
+install.packages("tidync")#
+install.packages("doParallel")
+install.packages("rerddap")
+library(tidync) # For easily dealing with NetCDF data#
+library(rerddap) # For easily downloading subsets of data#
+library(doParallel)
+install.packages("plyr")
+# The information for the NOAA OISST data#
+rerddap::info(datasetid = "ncdcOisst21Agg_LonPM180", url = "https://coastwatch.pfeg.noaa.gov/erddap/")
+# This function downloads and prepares data based on user provided start and end dates#
+OISST_sub_dl <- function(time_df){#
+  OISST_dat <- griddap(x = "ncdcOisst21Agg_LonPM180", #
+                       url = "https://coastwatch.pfeg.noaa.gov/erddap/", #
+                       time = c(time_df$start, time_df$end), #
+                       zlev = c(0, 0),#
+                       latitude = c(-40, -35),#
+                       longitude = c(15, 21),#
+                       fields = "sst")$data %>% #
+    mutate(time = as.Date(stringr::str_remove(time, "T00:00:00Z"))) %>% #
+    dplyr::rename(t = time, temp = sst) %>% #
+    select(lon, lat, t, temp) %>% #
+    na.omit()
+}
+library(heatwaveR)
+install.packages(heatwaveR)
+install.packages('heatwaveR')
+library(heatwaveR)
+21/3
+21/2
+8*2
+8*3
+40/5
+40+45+15
+45/2
+plot(1:10, ylab=expression(paste("Mean zooid width (",mu,")")))
+plot(1:10, ylab=expression(paste("Mean zooid width (",mu,")"m)))
+plot(1:10, ylab=expression(paste("Mean zooid width (",mu,"m)")))
+plot(1:10, ylab=expression(paste("Mean zooid width (m",mu,")")))
+plot(1:10, ylab=expression(paste("Mean zooid width (",mu,"m)")))
+q()
+24/2
+24/3
+26/2
+(2929.30)
+(2929.30)/2
+1615+25
+24/3
+24/8
+22/8
+21/8
+20/8
+19/8
+8*3
+8*2
+q()
+6800+13600
+6800+13600+12875
+181*2
+818*2
+818*2-900
+q()
+229*0.2
+q()
+40*40*50
+82*5
+91*5
+9*5
+90*5
+85*5
+87*5
+88*5
+3000*12
+3000*12*2
+100/150
+100/125
+1/8
+25/125
+25/0.25
+50/200
+75+75*0.5
+75+75*0.5-60
+75*0.5
+75*0.25
+75+38
+15+38
+1:45
+q()
+75*0.25
+15+19
+22/26
+q()
+x <- read.csv(file="Downloads/2025-02-19T1945_Grades-Sp25-ECS-0007-01-Dinosaurs!.csv")
+head(x)
+x <- read.csv(file="Downloads/2025-02-19T1945_Grades-Sp25-ECS-0007-01-Dinosaurs!.csv")
+head(x)
+hist(x$Dinosaurs..Exam.1..479064.)
+hist(x$Dinosaurs..Exam.1..479064./26*100)
+hist(x$Dinosaurs..Exam.1..479064./26*100, breaks=seq(76,100,1))
+13600+6800
+library(worrms)
+getwd()
+getwd()
