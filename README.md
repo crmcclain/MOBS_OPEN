@@ -40,16 +40,17 @@ if(length(new.packages)) install.packages(new.packages, repos='https://repo.mise
 library(worrms) # package for interacting with WoRMS
 library(reshape2) # package for transforming data frames
 
-# read in individual files
-data_size_temp1 <- read.csv("mobs.pt1.csv") 
-data_size_temp2 <- read.csv("mobs.pt2.csv") 
-data_size_temp3 <- read.csv("mobs.pt3.csv") 
-data_size_temp4 <- read.csv("mobs.pt4.csv") 
-data_size_temp5 <- read.csv("mobs.pt5.csv") 
-data_size_temp6 <- read.csv("mobs.pt6.csv") 
+# read in data files and combine into a single data frame
+mobs_files <- list(
+	"https://github.com/crmcclain/MOBS_OPEN/raw/refs/heads/main/mobs.pt1.csv",
+	"https://github.com/crmcclain/MOBS_OPEN/raw/refs/heads/main/mobs.pt2.csv",
+	"https://github.com/crmcclain/MOBS_OPEN/raw/refs/heads/main/mobs.pt3.csv",
+	"https://github.com/crmcclain/MOBS_OPEN/raw/refs/heads/main/mobs.pt4.csv",
+	"https://github.com/crmcclain/MOBS_OPEN/raw/refs/heads/main/mobs.pt5.csv",
+	"https://github.com/crmcclain/MOBS_OPEN/raw/refs/heads/main/mobs.pt6.csv"
+) # the file locations on GitHub
 
-# combine individual files into single data frame
-data_size_all <-  rbind(data_size_temp1, data_size_temp2, data_size_temp3, data_size_temp4, data_size_temp5, data_size_temp6) 
+data_size_all <- do.call("rbind", lapply(mobs_files, read.csv, strip.white=TRUE))
 
 # get unique AphiaIDs
 aphia <- unique(data_size_all$valid_AphiaID)
