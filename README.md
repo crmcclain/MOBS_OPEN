@@ -29,6 +29,11 @@ Taxonomy is in constant flux and synonomies are continuously being added to WoRM
 The six seperate data files can be combined. Then package worrms [https://github.com/ropensci/worrms](https://github.com/ropensci/worrms) can be utilized to match AphiaIDs to WoRMS to gain taxonomic and functional information. Example R code is given below.
 
 ```r
+# check to see if requried packages are installed, if not install them
+list.of.packages <- c("worrms", "reshape2")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages, repos='https://repo.miserver.it.umich.edu/cran/') 
+
 # load reqired packages--these will need to be installed using install.packages() before loading the libraries
 library(worrms) # package for interacting with WoRMS
 library(reshape2) # package for transforming data frames
@@ -42,29 +47,29 @@ data_size_temp5 <- read.csv("mobs.pt5.csv")
 data_size_temp6 <- read.csv("mobs.pt6.csv") 
 
 # combine individual files into single data frame
-data_size_all <-  bind_rows(data_size_temp1, data_size_temp2, data_size_temp3, data_size_temp4, data_size_temp5, data_size_temp6) 
+data_size_all <-  rbind(data_size_temp1, data_size_temp2, data_size_temp3, data_size_temp4, data_size_temp5, data_size_temp6) 
 
 # get unique AphiaIDs
 aphia <- unique(data_size_all$valid_AphiaID)
 
 # pull classification for all spcies--this is a slow process with >85K AphiaIDs. Just for convenience and to try and prevent timeout errors, we will use a loop to get the classificaiotn for groups of 500 species at a time. Each 500 species chunk will take longer than 1.5 minutes each. The total routine can take longer than 5 hours to run.
 
-chunks <- seq(1,length(aphia), 150) # the starting index for the chunks
-n.chunks <- length(chunks)
-chunks <- c(chunks, length(aphia)) # adding the total number ids
-# here we go with a simple for loop
+chunks <- seq(1,length(aphia), 50) # the starting index for the chunks
+n.chunks <- length(chunks) # number of chunks to iterate over
+chunks <- c(chunks, length(aphia)) # adding the total number of ids
+# here we go with a simple for loop--alternatively you could set this code up to run in parallel
 taxonomy <- data.frame() # initialize the variable
-t0 <- Sys.time(); print(t0) # lets keep track of time!
+t0 <- Sys.time(); print(t0) # lets keep track of time
 for(i in 1:n.chunks) {
 	these.taxa <- wm_classification_(id = aphia[chunks[i]:(chunks[i+1]-1)])
 	# drop the non-canonical ranks
-	these.taxa <- subset(these.taxa, is.element(rank, c('Phylum','Class','Order','Family','Genus','Species')))
+	these.taxa <- subset(these.taxa, is.element(rank, c('Kingdom','Phylum','Class','Order','Family','Genus','Species')))
 	
 	# bind new dataframe to existing--add the new rows
 	taxonomy <- rbind(taxonomy, these.taxa)
-	if(i %% 50 == 0) {print(chunks[i+1])} # print a note every 50 chunks (~25 minutes)
+	if(i %% 50 == 0) {print(chunks[i+1])}
 }
-t1 <- Sys.time(); print(t1 - t0) # how long did it take?
+t1 <- Sys.time(); print(t1); print(t1 - t0) # how long did it take? [about 5 hours]
 
 # convert worrms output to a dataframe with columns of AphiaID and each taxonomic rank
 taxonomy.df <- dcast(taxonomy, id~rank, value.var="scientificname")

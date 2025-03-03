@@ -1,3 +1,62 @@
+120/8
+install.packages("rgbif")
+install.packages("robis")
+library(rgbif)
+library(robis)
+?robis
+install.packages("mregions")
+install.packages("rmapshaper")
+?mr_shp
+library(sf)
+install.packages("wk")
+library(wk)
+install.packages("mregions2")
+install.packages("mregions2")ccg <- st_read("https://opendata.arcgis.com/datasets/de108fe659f2430d9558c20fe172638f_2.kml")
+ccg <- st_read("https://opendata.arcgis.com/datasets/de108fe659f2430d9558c20fe172638f_2.kml")
+class(ccg)
+name_backbone(name="Calopteryx splendens")
+name_backbone(name="MOllusca")
+name_backbone(name="Brachiopoda")
+name_backbone(name=c("Brachiopoda","Mollusca"))
+name_backbone_checklist(name=c("Brachiopoda","Mollusca"))
+occ_download(pred("taxonKey", 2436775))
+q()
+2.5/3
+(2.5*5+3*5)/30
+(2.5*4+3*5)/30
+(2.5*4+3*5)/27
+6.99/.17
+5.99/.51
+5.99/.15
+sqrt(0.04)
+650706+118488+79762+65399+101727
+214+398
+q()
+7*200
+q()
+7+8
+q()
+3+2.69
+(3+2.69)/2
+(2.65+2.6)/3
+q()
+students <- c("Evren","Ella","Sarah","Ashanit","Alex","Saajid","Feiyang","Jerry","Annika","Erik")
+length(students)
+sample(students)
+q()
+21*30
+21/2
+q()
+75+(75/2)
+(75/2)
+q()
+200/10000000
+200000/10000000
+240000/1000000
+3/1000
+200000/10000000
+(200000+200000*.4)/10000000
+(200000/0.4)/10000000
 200000/0.4
 (200000/0.2)/10000000
 (200000/0.6)/10000000
@@ -207,191 +266,6 @@ hist(x$Dinosaurs..Exam.1..479064.)
 hist(x$Dinosaurs..Exam.1..479064./26*100)
 hist(x$Dinosaurs..Exam.1..479064./26*100, breaks=seq(76,100,1))
 13600+6800
-# load reqired packages#
-library(dplyr) # a tidyverse package for manipulating data frames#
-library(readr) # a tidyverse package for reading files#
-library(worrms) # package for interacting with WoRMS#
-#
-# read in individual files#
-data_size_temp1 <- readr::read_csv("mobs.pt1.csv") #
-data_size_temp2 <- readr::read_csv("mobs.pt2.csv") #
-data_size_temp3 <- readr::read_csv("mobs.pt3.csv") #
-data_size_temp4 <- readr::read_csv("mobs.pt4.csv") #
-data_size_temp5 <- readr::read_csv("mobs.pt5.csv") #
-data_size_temp6 <- readr::read_csv("mobs.pt6.csv") #
-#
-# combine individual files into single data frame#
-data_size_all <-  bind_rows(data_size_temp1, data_size_temp2, data_size_temp3, data_size_temp4, data_size_temp5, data_size_temp6)
-dim(data_size_all)
-head(data_size_all)
-length(unique(data_size_all$valid_AphiaID))
-aphia <- unique(data_size_all$valid_aphiaID)
-head(data_size_all)
-aphia <- unique(data_size_all$valid_AphiaID)
-aphia
-taxonomy <- wm_classification_(id = aphia)
-aphia
-Sys.time()
-t0 <- Sys.time(); taxonomy <- wm_classification_(id = aphia[1:150]);Sys.time() - t0
-t0 <- Sys.time(); taxonomy <- wm_classification_(id = aphia[1:500]);Sys.time() - t0
-seq(1,length(aphia), 500)
-length(aphia)
-length(seq(1,length(aphia), 500))*1.67
-length(seq(1,length(aphia), 500))*1.67/60
-seq(1,length(aphia), 499)
-seq(1,length(aphia), 500)
-chunks <- seq(1,length(aphia), 500) # the starting index for the chunks#
-n.chunks <- length(chunks)#
-chunks <- c(chunks, length(aphia)) # adding the total number ids
-chunks
-chunks <- seq(1,length(aphia), 10) # the starting index for the chunks#
-n.chunks <- length(chunks)#
-chunks <- c(chunks, length(aphia)) # adding the total number ids#
-# here we go with a simple for loop#
-taxonomy <- data.frame() # initalize the variable#
-for(i in 1:3) {#
-	these.taxa <- wm_classification_(id = aphia[chunks[i]:(chunks[i+1]-1)#
-	taxonomy <- rbind(taxonomy, these.taxa)#
-}
-chunks <- seq(1,length(aphia), 10) # the starting index for the chunks#
-n.chunks <- length(chunks)#
-chunks <- c(chunks, length(aphia)) # adding the total number ids#
-# here we go with a simple for loop#
-taxonomy <- data.frame() # initalize the variable#
-for(i in 1:2) {#
-	these.taxa <- wm_classification_(id = aphia[chunks[i]:(chunks[i+1]-1))#
-	taxonomy <- rbind(taxonomy, these.taxa)#
-}
-i
-chunks <- seq(1,length(aphia), 500) # the starting index for the chunks#
-n.chunks <- length(chunks)#
-chunks <- c(chunks, length(aphia)) # adding the total number ids#
-# here we go with a simple for loop#
-taxonomy <- data.frame() # initalize the variable
-i <- 1
-these.taxa <- wm_classification_(id = aphia[chunks[i]:(chunks[i+1]-1))
-these.taxa <- wm_classification_(id = aphia[chunks[i]:(chunks[i+1]-1)])
-chunks <- seq(1,length(aphia), 10) # the starting index for the chunks#
-n.chunks <- length(chunks)#
-chunks <- c(chunks, length(aphia)) # adding the total number ids#
-# here we go with a simple for loop#
-taxonomy <- data.frame() # initalize the variable#
-for(i in 1:3) {#
-	these.taxa <- wm_classification_(id = aphia[chunks[i]:(chunks[i+1]-1)])#
-	taxonomy <- rbind(taxonomy, these.taxa)#
-}
-taxonomy
-dim(taxonomy)
-taxonomy <- subset(taxonomy, is.element(rank, c('Phylum','Class','Order','Family','Genus','Species')))
-# convert worrms output to a dataframe with columns of AphiaID and each taxonomic rank#
-taxonomy.df <- dcast(taxonomy, id~rank, value.var="scientificname")#
-colnames(taxonomy.df)[1] <- "AphiaID" # change column name to match data_size_all
-library(dplyr) # a tidyverse package for manipulating data frames#
-library(readr) # a tidyverse package for reading files#
-library(worrms) # package for interacting with WoRMS#
-library(reshape2)
-# convert worrms output to a dataframe with columns of AphiaID and each taxonomic rank#
-taxonomy.df <- dcast(taxonomy, id~rank, value.var="scientificname")#
-colnames(taxonomy.df)[1] <- "AphiaID" # change column name to match data_size_all
-# add taxonomy to original data frame#
-data_size_all <- merge(data_size_all, taxonomy.df, by="AphiaID", all= T)
-taxonomy.df
-head(data_size_all)
-chunks <- seq(1,length(aphia), 10) # the starting index for the chunks#
-n.chunks <- length(chunks)#
-chunks <- c(chunks, length(aphia)) # adding the total number ids#
-# here we go with a simple for loop#
-taxonomy <- data.frame() # initalize the variable#
-for(i in 1:3) {#
-    these.taxa <- wm_classification_(id = aphia[chunks[i]:(chunks[i+1]-1)])#
-    taxonomy <- rbind(taxonomy, these.taxa)#
-}#
-#
-# drop the non-canonical ranks#
-taxonomy <- subset(taxonomy, is.element(rank, c('Phylum','Class','Order','Family','Genus','Species')))#
-#
-# convert worrms output to a dataframe with columns of AphiaID and each taxonomic rank#
-taxonomy.df <- dcast(taxonomy, id~rank, value.var="scientificname")#
-colnames(taxonomy.df)[1] <- "valid_AphiaID" # change column name to match data_size_all#
-#
-# add taxonomy to original data frame#
-data_size_all <- merge(data_size_all, taxonomy.df, by="AphiaID", all= T)#
-#
-# finally, make column names match those of the combined data sets#
-colnames(data_size_all)[olnames(data_size_all) == "Species"] <- "scientificName"
-chunks <- seq(1,length(aphia), 10) # the starting index for the chunks#
-n.chunks <- length(chunks)#
-chunks <- c(chunks, length(aphia)) # adding the total number ids#
-# here we go with a simple for loop#
-taxonomy <- data.frame() # initalize the variable#
-for(i in 1:3) {#
-    these.taxa <- wm_classification_(id = aphia[chunks[i]:(chunks[i+1]-1)])#
-    taxonomy <- rbind(taxonomy, these.taxa)#
-}#
-#
-# drop the non-canonical ranks#
-taxonomy <- subset(taxonomy, is.element(rank, c('Phylum','Class','Order','Family','Genus','Species')))#
-#
-# convert worrms output to a dataframe with columns of AphiaID and each taxonomic rank#
-taxonomy.df <- dcast(taxonomy, id~rank, value.var="scientificname")#
-colnames(taxonomy.df)[1] <- "valid_AphiaID" # change column name to match data_size_all#
-#
-# add taxonomy to original data frame#
-data_size_all <- merge(data_size_all, taxonomy.df, by="valid_AphiaID", all= T)#
-#
-# finally, make column names match those of the combined data sets#
-colnames(data_size_all)[olnames(data_size_all) == "Species"] <- "scientificName"
-head(data_size_all)
-aphia[1:30]
-subset(data_size_all, is.element(valid_AphiaID, aphia[1:30])
-)
-colnames(data_size_all)
-12 %% 3
-12 %% 6
-12 %% 24
-5 %% 1:20
-20 %% 5
-20 %% 6
-1:20 %% 5
-1.67*10
-# read in individual files#
-data_size_temp1 <- readr::read_csv("mobs.pt1.csv") #
-data_size_temp2 <- readr::read_csv("mobs.pt2.csv") #
-data_size_temp3 <- readr::read_csv("mobs.pt3.csv") #
-data_size_temp4 <- readr::read_csv("mobs.pt4.csv") #
-data_size_temp5 <- readr::read_csv("mobs.pt5.csv") #
-data_size_temp6 <- readr::read_csv("mobs.pt6.csv") #
-#
-# combine individual files into single data frame#
-data_size_all <-  bind_rows(data_size_temp1, data_size_temp2, data_size_temp3, data_size_temp4, data_size_temp5, data_size_temp6) #
-#
-# get unique AphiaIDs#
-aphia <- unique(data_size_all$valid_AphiaID)#
-#
-# pull classification for all spcies--this is a slow process with >85K AphiaIDs. Just for convenience and to try and prevent timeout errors, we will use a loop to get the classificaiotn for groups of 500 species at a time. Each 500 species chunk will take longer than 1.5 minutes each. The total routine can take longer than 5 hours to run.#
-#
-chunks <- seq(1,length(aphia), 150) # the starting index for the chunks#
-n.chunks <- length(chunks)#
-chunks <- c(chunks, length(aphia)) # adding the total number ids#
-# here we go with a simple for loop#
-taxonomy <- data.frame() # initialize the variable#
-t0 <- Sys.time()#
-print(t0)#
-for(i in 1:3) {#
-	these.taxa <- wm_classification_(id = aphia[chunks[i]:(chunks[i+1]-1)])#
-	taxonomy <- rbind(taxonomy, these.taxa)#
-	if(i %% 50 == 0) {print(chunks[i+1])}#
-}#
-t1 <- Sys.time()#
-print(t1 - t0)
-taxonomy
-50/3
-50/3*1.5
-dat <- vroom(...)#
-  problems(dat)
-data_size_temp3 <- readr::read_csv("mobs.pt3.csv")
-dat <- vroom(...)#
-  problems(dat)
-dat <- vroom(...)#
-  problems(dat)
-q()
+library(worrms)
+getwd()
+getwd()
