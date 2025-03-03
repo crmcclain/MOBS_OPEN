@@ -28,6 +28,8 @@ Taxonomy is in constant flux and synonomies are continuously being added to WoRM
 
 The six seperate data files can be combined. Then package worrms [https://github.com/ropensci/worrms](https://github.com/ropensci/worrms) can be utilized to match AphiaIDs to WoRMS to gain taxonomic and functional information. Example R code is given below.
 
+**NOTE:** this code will take a long time to run. I have set it up to run in chunks to keep the WoRMS data service from returning a run time error. Depending on the speed of your computer and the traffic on WoRMS, this code will take 5 to 9 hours to run. You could set this up to run in prarallel, though I doubt it will save much time since the major bottle neck is WoRMS. Though it may be worth a try.
+
 ```r
 # check to see if requried packages are installed, if not install them
 list.of.packages <- c("worrms", "reshape2")
