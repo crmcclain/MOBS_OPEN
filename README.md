@@ -18,10 +18,11 @@ The file *data\_all\_112224.csv* provides data in MOBS as of 11-22-24 with curre
 |Notes| notes on the measurement|
 |Size\_Ref| reference for the sizes measurement(s)|
 |Date\_Added| date record was added to database|
+|Biological\_Unit| wheter the measurement is for a zooid, polyp, colony, or solitary|
 
 References are provided in both plain text (*Size\_Data\_Reference\_Plain.txt*) and RIS formats (*Size\_Data\_Reference\_RIS.txt*).
 
-The current database contains 86,504 unique species (AphiaIDs). Most species are represented by a single row, however, some have more than one row, thus more than one size measurement. 
+The current database contains 85,204 unique species (AphiaIDs). Most species are represented by a single row, however, some have more than one row, thus more than one size measurement. 
 
 ### Updating taxonomy from WoRMS 
 Taxonomy is in constant flux and synonomies are continuously being added to WoRMS. If you would like to pull the most recent taxonomy from WoRMS, you may do so using the six files named *mobs.pt1.csv*, *mobs.pt2.csv*, etc. These files have the same columns as *data\_all\_112224.csv*, except they do not have those related taxonomy (e.g., scientificName, phylum).
