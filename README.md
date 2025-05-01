@@ -1,3 +1,6 @@
+![MOBS Logo](https://github.com/user-attachments/assets/07e838d1-ab64-4180-9670-41db95380241)
+
+
 # The Marine Organismal Body Size (MOBS) Database
 
 The file *data\_all\_112224.csv* provides data in MOBS as of 11-22-24 with current taxonomic information and species names pulled from the World Register of Marine Species (WoRMS; [https://www.marinespecies.org/](https://www.marinespecies.org/)). You can downloadn this file, read it into your preferred software and begin analyses. This file has 181,531 rows and 14 columns. The columns are as follows:
