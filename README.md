@@ -21,7 +21,7 @@ The file *data\_all\_112224.csv* provides data in MOBS as of 11-22-24 with curre
 |Notes| notes on the measurement|
 |Size\_Ref| reference for the sizes measurement(s)|
 |Date\_Added| date record was added to database|
-|Biological\_Unit| wheter the measurement is for a zooid, polyp, colony, or solitary|
+|Biological\_Unit| whether the measurement is for a zooid, polyp, colony, or solitary|
 
 References are provided in both plain text (*Size\_Data\_Reference\_Plain.txt*) and RIS formats (*Size\_Data\_Reference\_RIS.txt*).
 
