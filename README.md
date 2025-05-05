@@ -3,7 +3,11 @@
 
 # The Marine Organismal Body Size (MOBS) Database
 
-The file *data\_all\_112224.csv* provides data in MOBS as of 11-22-24 with current taxonomic information and species names pulled from the World Register of Marine Species (WoRMS; [https://www.marinespecies.org/](https://www.marinespecies.org/)). You can downloadn this file, read it into your preferred software and begin analyses. This file has 181,531 rows and 14 columns. The columns are as follows:
+The file *data\_all\_112224.csv* provides data in MOBS as of 11-22-24 with current taxonomic information and species names pulled from the World Register of Marine Species (WoRMS; [https://www.marinespecies.org/](https://www.marinespecies.org/)). You can downloadn this file, read it into your preferred software and begin analyses. This file has 181,531 rows and 14 columns. 
+
+**NOTE:** The file *data\_all\_112224.csv* will only contain size data as of 11-22-24. The separate data files named *mobs.pt1.csv*, *mobs.pt2.csv*, etc. will contain the most up-to-date size data and with additonal species and sizes.  If you would prefer to use the most recent data follow the section below title Updating taxonomy from WoRMS.
+
+The columns are as follows:
 
 |Column Name|Column Description|
 |---|---|
@@ -28,7 +32,7 @@ References are provided in both plain text (*Size\_Data\_Reference\_Plain.txt*) 
 The current database contains 85,204 unique species (AphiaIDs). Most species are represented by a single row, however, some have more than one row, thus more than one size measurement. 
 
 ### Updating taxonomy from WoRMS 
-Taxonomy is in constant flux and synonomies are continuously being added to WoRMS. If you would like to pull the most recent taxonomy from WoRMS, you may do so using the six files named *mobs.pt1.csv*, *mobs.pt2.csv*, etc. These files have the same columns as *data\_all\_112224.csv*, except they do not have those related taxonomy (e.g., scientificName, phylum).
+Taxonomy is in constant flux and synonomies are continuously being added to WoRMS. If you would like to pull the most recent taxonomy from WoRMS, you may do so using the six files named *mobs.pt1.csv*, *mobs.pt2.csv*, etc. These files have the same columns as *data\_all\_112224.csv*, except they do not have those related taxonomy (e.g., scientificName, phylum). 
 
 The six seperate data files can be combined. Then package worrms [https://github.com/ropensci/worrms](https://github.com/ropensci/worrms) can be utilized to match AphiaIDs to WoRMS to gain taxonomic and functional information. Example R code is given below.
 
