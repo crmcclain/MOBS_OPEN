@@ -3,10 +3,18 @@
 
 # The Marine Organismal Body Size (MOBS) Database
 
-The file *data\_all\_112224.csv* provides data in MOBS as of 11-22-24 with current taxonomic information and species names pulled from the World Register of Marine Species (WoRMS; [https://www.marinespecies.org/](https://www.marinespecies.org/)). You can downloadn this file, read it into your preferred software and begin analyses. This file has 181,531 rows and 14 columns. 
+The file *data\_all\_112224.csv* provides data in MOBS as of 11-22-24 with current taxonomic information and species names pulled from the World Register of Marine Species (WoRMS; [https://www.marinespecies.org/](https://www.marinespecies.org/)). You can download this file, read it into your preferred software and begin analyses. This file has 181,531 rows (size measuremments) and 14 columns for 85,204 unique species (AphiaIDs).
 
 **NOTE:** The file *data\_all\_112224.csv* will only contain size data as of 11-22-24. The separate data files named *mobs.pt1.csv*, *mobs.pt2.csv*, etc. will contain the most up-to-date size data and with additonal species and sizes.  If you would prefer to use the most recent data follow the section below title Updating taxonomy from WoRMS.
 
+### Citation Requirement
+If you use the MOBS database in any form—whether in publications, presentations, or derivative datasets—you are required to cite the following reference:
+
+McClain, C. R., Heim, N. A., Knope, M. L., Monarrez, P. M., Payne, J. L., Santos, I. T., & Webb, T. J. (2025). MOBS 1.0: A database of interspecific variation in marine organismal body sizes. *Global Ecology and Biogeography*, in press.
+
+Proper citation ensures credit to the creators and supports the continued development and maintenance of the database.
+
+### Dataset Details
 The columns are as follows:
 
 |Column Name|Column Description|
@@ -29,7 +37,7 @@ The columns are as follows:
 
 References are provided in both plain text (*Size\_Data\_Reference\_Plain.txt*) and RIS formats (*Size\_Data\_Reference\_RIS.txt*).
 
-The current database contains 85,204 unique species (AphiaIDs). Most species are represented by a single row, however, some have more than one row, thus more than one size measurement. 
+Most species are represented by a single row, however, some have more than one row, thus more than one size measurement. 
 
 ### Updating taxonomy from WoRMS 
 Taxonomy is in constant flux and synonomies are continuously being added to WoRMS. If you would like to pull the most recent taxonomy from WoRMS, you may do so using the six files named *mobs.pt1.csv*, *mobs.pt2.csv*, etc. These files have the same columns as *data\_all\_112224.csv*, except they do not have those related taxonomy (e.g., scientificName, phylum). 
