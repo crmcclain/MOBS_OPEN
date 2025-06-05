@@ -10,9 +10,14 @@ The file *data\_all\_112224.csv* provides data in MOBS as of 11-22-24 (MOBS 1.0)
 ### Citation Requirement
 If you use the MOBS database in any form—whether in publications, presentations, or derivative datasets—you are required to cite the following reference:
 
-McClain, C. R., Heim, N. A., Knope, M. L., Monarrez, P. M., Payne, J. L., Santos, I. T., & Webb, T. J. (2025). MOBS 1.0: A database of interspecific variation in marine organismal body sizes. *Global Ecology and Biogeography*, in press.
+McClain, C. R., Heim, N. A., Knope, M. L., Monarrez, P. M., Payne, J. L., Santos, I. T., & Webb, T. J. (2025). MOBS 1.0: A database of interspecific variation in marine organismal body sizes. *Global Ecology and Biogeography*, 34: e70062. https://doi.org/10.1111/geb.70062 
 
 Proper citation ensures credit to the creators and supports the continued development and maintenance of the database.
+
+### Papers Utilizing MOBS
+McClain, C.R., Webb, T.J., Heim, N.A., Knope, M.L., Monarrez, P.M. and Payne, J.L. (2025), Size bias in the documentation of marine biodiversity. Oikos, 2025: e10828. https://doi.org/10.1111/oik.10828
+
+McClain, C. R., Webb, T. J., Heim, N. A., Knope, M. L., Monarrez, P. M., & Payne, J. L. (2024). Navigating uncertainty in maximum body size in marine metazoans. Ecology and Evolution, 14, e11506. https://doi.org/10.1002/ece3.11506
 
 ### Dataset Details
 The columns are as follows:
