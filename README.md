@@ -19,6 +19,25 @@ McClain, C.R., Webb, T.J., Heim, N.A., Knope, M.L., Monarrez, P.M. and Payne, J.
 
 McClain, C. R., Webb, T. J., Heim, N. A., Knope, M. L., Monarrez, P. M., & Payne, J. L. (2024). Navigating uncertainty in maximum body size in marine metazoans. Ecology and Evolution, 14, e11506. https://doi.org/10.1002/ece3.11506
 
+### Press on MOBS
+
+Kaplan, S. (2025, June 22). *A massive new database captures the true scale of life in the ocean*. The Washington Post. https://www.washingtonpost.com/science/2025/06/22/ocean-life-database-animal-size/
+
+Nipponese News. (2025, June 24). *海洋生命体のサイズデータベース「海洋生物多様性の鍵」、国際研究チームが公開* [Marine life size database, “Key to Marine Biodiversity,” released by international research team].
+
+Al Jazeera. (2025, June 15). *قاعدة بيانات جديدة لحجم جسم 85 ألف نوع من الكائنات البحرية* [New database reveals body size of 85,000 marine species]. https://www.aljazeera.net/climate/2025/6/
+
+The Spokesman-Review. (2025, June 22). *New marine life database touted as tool for ocean conservation*. https://www.spokesman.com/stories/2025/jun/22/new-marine-life-database-touted-as-tool-for-ocean-/
+
+Ouellette, J. (2025, June 22). *New body size database for marine animals is a “library of life”*. Ars Technica. https://arstechnica.com/science/2025/06/new-body-size-database-for-marine-animals-is-a-library-of-life/
+
+ECO Magazine. (2025, June 24). *New body size database holds the key to marine life protections*. https://ecomagazine.com/news/research/new-body-size-database-holds-the-key-to-marine-life-protections/
+
+University of Louisiana at Lafayette. (2025, June 24). *Scientists launch largest database of marine animal sizes* [Press release]. EurekAlert!. https://www.eurekalert.org/news-releases/1084479
+
+Indian Defence Review. (2025, June 24). *Scientists document body sizes of 85,000 marine species*. https://indiandefencereview.com/scientists-body-sizes-85000-marine-species/
+
+
 ### Dataset Details
 The columns are as follows:
 
