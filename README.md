@@ -37,6 +37,8 @@ University of Louisiana at Lafayette. (2025, June 24). *Scientists launch larges
 
 Indian Defence Review. (2025, June 24). *Scientists document body sizes of 85,000 marine species*. https://indiandefencereview.com/scientists-body-sizes-85000-marine-species/
 
+Johnson, C. (2025, June 25). *Biologists Launch Most Comprehensive Database of Marine Animal Body Sizes to Date*. Mental Floss. https://www.mentalfloss.com/animals/marine-animal-body-size-database
+
 
 ### Dataset Details
 The columns are as follows:
