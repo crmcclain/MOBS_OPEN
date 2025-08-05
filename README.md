@@ -39,6 +39,8 @@ Indian Defence Review. (2025, June 24). *Scientists document body sizes of 85,00
 
 Johnson, C. (2025, June 25). *Biologists Launch Most Comprehensive Database of Marine Animal Body Sizes to Date*. Mental Floss. https://www.mentalfloss.com/animals/marine-animal-body-size-database
 
+Barber, R. (2025, August 4). *The giants lurking in the deep sea*. NPR. https://www.npr.org/2025/08/04/1256727549/deep-sea-giant-ocean-temperature-climate
+
 
 ### Dataset Details
 The columns are as follows:
