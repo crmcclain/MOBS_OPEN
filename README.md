@@ -5,12 +5,14 @@
 
 The file *data\_all\_112224.csv* provides data in MOBS as of 11-22-24 (MOBS 1.0) with current taxonomic information and species names pulled from the World Register of Marine Species (WoRMS; [https://www.marinespecies.org/](https://www.marinespecies.org/)). You can download this file, read it into your preferred software and begin analyses. This file has 181,531 rows (size measuremments) and 14 columns for 85,204 unique species (AphiaIDs).
 
-**NOTE:** The file *data\_all\_112224.csv* will only contain size data as of 11-22-24. The separate data files named *mobs.pt1.csv*, *mobs.pt2.csv*, etc. will contain the most up-to-date size data and with additonal species and sizes (MOBS 1.x).  If you would prefer to use the most recent data follow the section below titled Updating taxonomy from WoRMS.
+**NOTE:** The most up-to-date version is MOBS 2.0 Magnapinna. The separate data files named *mobs.pt1.csv*, *mobs.pt2.csv*, etc. will contain the most up-to-date size data and with additonal species and sizes (MOBS 2.0 Magnapinna).  If you would prefer to use the most recent data follow the section below titled Updating taxonomy from WoRMS.
 
 ### Citation Requirement
 If you use the MOBS database in any form—whether in publications, presentations, or derivative datasets—you are required to cite the following reference:
 
 McClain, C. R., Heim, N. A., Knope, M. L., Monarrez, P. M., Payne, J. L., Santos, I. T., & Webb, T. J. (2025). MOBS 1.0: A database of interspecific variation in marine organismal body sizes. *Global Ecology and Biogeography*, 34: e70062. https://doi.org/10.1111/geb.70062 
+
+McClain, C. R., Heim, N. A., Koch, N., Knope, M. L., Monarrez, P. M., Payne, J. L., Santos, I. T., & Webb, T. J. (2026) MOBS 2.0 (Magnapinna) A database of interspecific variation in marine organismal body sizes. 
 
 Proper citation ensures credit to the creators and supports the continued development and maintenance of the database.
 
@@ -59,9 +61,12 @@ The columns are as follows:
 |diameter\_width\_cm| diameter or width of individual measured in centimeters|
 |height\_cm| height of individual measured in centimeters|
 |Notes| notes on the measurement|
-|Size\_Ref| reference for the sizes measurement(s)|
+|Size\_Ref| reference for the sizes measurement(s) related to either Endnote {ref} or DOI|
+|Is_Ref_DOI| Logical indicator identifying whether a reference entry originates from an external DOI (Digital Object Identifier) or from an internal EndNote library|
 |Date\_Added| date record was added to database|
 |Biological\_Unit| whether the measurement is for a zooid, polyp, colony, or solitary|
+|Sex| Sex of the measured specimen. This field identifies the sex based on common abbreviations or full words found in the manuscript, including male, female, hermaphrodite, and juvenile. Entries that do not match any known sex terms are labeled as Unknown.|
+|specimen_type| Categorical field indicating the type status of the invertebrate specimen based on keywords in the Notes column (F). This field identifies whether the specimen is a Holotype, Paratype, Syntype, Lectotype, Neotype, Topotype, Additional specimens, or Unknown if no relevant information is present.|
 
 References are provided in both plain text (*Size\_Data\_Reference\_Plain.txt*) and RIS formats (*Size\_Data\_Reference\_RIS.txt*).
 
