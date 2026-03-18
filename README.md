@@ -12,7 +12,7 @@ If you use the MOBS database in any form—whether in publications, presentation
 
 McClain, C. R., Heim, N. A., Knope, M. L., Monarrez, P. M., Payne, J. L., Santos, I. T., & Webb, T. J. (2025). MOBS 1.0: A database of interspecific variation in marine organismal body sizes. *Global Ecology and Biogeography*, 34: e70062. https://doi.org/10.1111/geb.70062 
 
-McClain, C. R., Heim, N. A., Koch, N., Knope, M. L., Monarrez, P. M., Payne, J. L., Santos, I. T., & Webb, T. J. (2026) MOBS 2.0 (Magnapinna) A database of interspecific variation in marine organismal body sizes. 
+McClain, C. R., Heim, N. A., Koch, N., Knope, M. L., Monarrez, P. M., Payne, J. L., Santos, I. T., & Webb, T. J. (2026) MOBS 2.0 (Magnapinna) A database of interspecific variation in marine organismal body sizes.  ttps://doi.org/10.5281/zenodo.19078969
 
 Proper citation ensures credit to the creators and supports the continued development and maintenance of the database.
 
