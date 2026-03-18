@@ -1,6 +1,51 @@
+![MOBS Logo](https://github.com/user-attachments/assets/07e838d1-ab64-4180-9670-41db95380241)
+
+
 # The Marine Organismal Body Size (MOBS) Database
 
-The file *data\_all\_112224.csv* provides data in MOBS as of 11-22-24 with current taxonomic information and species names pulled from the World Register of Marine Species (WoRMS; [https://www.marinespecies.org/](https://www.marinespecies.org/)). You can downloadn this file, read it into your preferred software and begin analyses. This file has 181,531 rows and 14 columns. The columns are as follows:
+The file *data\_all\_112224.csv* provides data in MOBS as of 11-22-24 (MOBS 1.0) with current taxonomic information and species names pulled from the World Register of Marine Species (WoRMS; [https://www.marinespecies.org/](https://www.marinespecies.org/)). You can download this file, read it into your preferred software and begin analyses. This file has 181,531 rows (size measuremments) and 14 columns for 85,204 unique species (AphiaIDs).
+
+**NOTE:** The most up-to-date version is MOBS 2.0 Magnapinna. The separate data files named *mobs.pt1.csv*, *mobs.pt2.csv*, etc. will contain the most up-to-date size data and with additonal species and sizes (MOBS 2.0 Magnapinna).  If you would prefer to use the most recent data follow the section below titled Updating taxonomy from WoRMS.
+
+### Citation Requirement
+If you use the MOBS database in any form—whether in publications, presentations, or derivative datasets—you are required to cite the following reference:
+
+McClain, C. R., Heim, N. A., Knope, M. L., Monarrez, P. M., Payne, J. L., Santos, I. T., & Webb, T. J. (2025). MOBS 1.0: A database of interspecific variation in marine organismal body sizes. *Global Ecology and Biogeography*, 34: e70062. https://doi.org/10.1111/geb.70062 
+
+McClain, C. R., Heim, N. A., Koch, N., Knope, M. L., Monarrez, P. M., Payne, J. L., Santos, I. T., & Webb, T. J. (2026) MOBS 2.0 (Magnapinna) A database of interspecific variation in marine organismal body sizes. 
+
+Proper citation ensures credit to the creators and supports the continued development and maintenance of the database.
+
+### Papers Utilizing MOBS
+McClain, C.R., Webb, T.J., Heim, N.A., Knope, M.L., Monarrez, P.M. and Payne, J.L. (2025), Size bias in the documentation of marine biodiversity. Oikos, 2025: e10828. https://doi.org/10.1111/oik.10828
+
+McClain, C. R., Webb, T. J., Heim, N. A., Knope, M. L., Monarrez, P. M., & Payne, J. L. (2024). Navigating uncertainty in maximum body size in marine metazoans. Ecology and Evolution, 14, e11506. https://doi.org/10.1002/ece3.11506
+
+### Press on MOBS
+
+Kaplan, S. (2025, June 22). *A massive new database captures the true scale of life in the ocean*. The Washington Post. https://www.washingtonpost.com/science/2025/06/22/ocean-life-database-animal-size/
+
+Nipponese News. (2025, June 24). *海洋生命体のサイズデータベース「海洋生物多様性の鍵」、国際研究チームが公開* [Marine life size database, “Key to Marine Biodiversity,” released by international research team].
+
+Al Jazeera. (2025, June 15). *قاعدة بيانات جديدة لحجم جسم 85 ألف نوع من الكائنات البحرية* [New database reveals body size of 85,000 marine species]. https://www.aljazeera.net/climate/2025/6/
+
+The Spokesman-Review. (2025, June 22). *New marine life database touted as tool for ocean conservation*. https://www.spokesman.com/stories/2025/jun/22/new-marine-life-database-touted-as-tool-for-ocean-/
+
+Ouellette, J. (2025, June 22). *New body size database for marine animals is a “library of life”*. Ars Technica. https://arstechnica.com/science/2025/06/new-body-size-database-for-marine-animals-is-a-library-of-life/
+
+ECO Magazine. (2025, June 24). *New body size database holds the key to marine life protections*. https://ecomagazine.com/news/research/new-body-size-database-holds-the-key-to-marine-life-protections/
+
+University of Louisiana at Lafayette. (2025, June 24). *Scientists launch largest database of marine animal sizes* [Press release]. EurekAlert!. https://www.eurekalert.org/news-releases/1084479
+
+Indian Defence Review. (2025, June 24). *Scientists document body sizes of 85,000 marine species*. https://indiandefencereview.com/scientists-body-sizes-85000-marine-species/
+
+Johnson, C. (2025, June 25). *Biologists Launch Most Comprehensive Database of Marine Animal Body Sizes to Date*. Mental Floss. https://www.mentalfloss.com/animals/marine-animal-body-size-database
+
+Barber, R. (2025, August 4). *The giants lurking in the deep sea*. NPR. https://www.npr.org/2025/08/04/1256727549/deep-sea-giant-ocean-temperature-climate
+
+
+### Dataset Details
+The columns are as follows:
 
 |Column Name|Column Description|
 |---|---|
@@ -16,16 +61,19 @@ The file *data\_all\_112224.csv* provides data in MOBS as of 11-22-24 with curre
 |diameter\_width\_cm| diameter or width of individual measured in centimeters|
 |height\_cm| height of individual measured in centimeters|
 |Notes| notes on the measurement|
-|Size\_Ref| reference for the sizes measurement(s)|
+|Size\_Ref| reference for the sizes measurement(s) related to either Endnote {ref} or DOI|
+|Is_Ref_DOI| Logical indicator identifying whether a reference entry originates from an external DOI (Digital Object Identifier) or from an internal EndNote library|
 |Date\_Added| date record was added to database|
-|Biological\_Unit| wheter the measurement is for a zooid, polyp, colony, or solitary|
+|Biological\_Unit| whether the measurement is for a zooid, polyp, colony, or solitary|
+|Sex| Sex of the measured specimen. This field identifies the sex based on common abbreviations or full words found in the manuscript, including male, female, hermaphrodite, and juvenile. Entries that do not match any known sex terms are labeled as Unknown.|
+|specimen_type| Categorical field indicating the type status of the invertebrate specimen based on keywords in the Notes column (F). This field identifies whether the specimen is a Holotype, Paratype, Syntype, Lectotype, Neotype, Topotype, Additional specimens, or Unknown if no relevant information is present.|
 
 References are provided in both plain text (*Size\_Data\_Reference\_Plain.txt*) and RIS formats (*Size\_Data\_Reference\_RIS.txt*).
 
-The current database contains 85,204 unique species (AphiaIDs). Most species are represented by a single row, however, some have more than one row, thus more than one size measurement. 
+Most species are represented by a single row, however, some have more than one row, thus more than one size measurement. 
 
 ### Updating taxonomy from WoRMS 
-Taxonomy is in constant flux and synonomies are continuously being added to WoRMS. If you would like to pull the most recent taxonomy from WoRMS, you may do so using the six files named *mobs.pt1.csv*, *mobs.pt2.csv*, etc. These files have the same columns as *data\_all\_112224.csv*, except they do not have those related taxonomy (e.g., scientificName, phylum).
+Taxonomy is in constant flux and synonomies are continuously being added to WoRMS. If you would like to pull the most recent taxonomy from WoRMS, you may do so using the six files named *mobs.pt1.csv*, *mobs.pt2.csv*, etc. These files have the same columns as *data\_all\_112224.csv*, except they do not have those related taxonomy (e.g., scientificName, phylum). 
 
 The six seperate data files can be combined. Then package worrms [https://github.com/ropensci/worrms](https://github.com/ropensci/worrms) can be utilized to match AphiaIDs to WoRMS to gain taxonomic and functional information. Example R code is given below.
 
