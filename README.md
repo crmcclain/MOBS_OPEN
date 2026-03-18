@@ -3,7 +3,7 @@
 
 # The Marine Organismal Body Size (MOBS) Database
 
-The file *data\_all\_112224.csv* provides data in MOBS as of 11-22-24 (MOBS 1.0) with current taxonomic information and species names pulled from the World Register of Marine Species (WoRMS; [https://www.marinespecies.org/](https://www.marinespecies.org/)). You can download this file, read it into your preferred software and begin analyses. This file has 181,531 rows (size measuremments) and 14 columns for 85,204 unique species (AphiaIDs).
+The file *data\_all\_112224.csv* provides data in MOBS as of 11-22-24 (MOBS 1.0) with current taxonomic information and species names pulled from the World Register of Marine Species (WoRMS; [https://www.marinespecies.org/](https://www.marinespecies.org/)). You can download this file, read it into your preferred software and begin analyses. This file has 170,214 rows (size measuremments) and 14 columns for 80,844 unique species (AphiaIDs).
 
 **NOTE:** The most up-to-date version is **MOBS 2.0 Magnapinna**. The separate data files named *mobs.pt1.csv*, *mobs.pt2.csv*, etc. will contain the most up-to-date size data and with additonal species and sizes (MOBS 2.0 Magnapinna).  If you would prefer to use the most recent data follow the section below titled Updating taxonomy from WoRMS. This file has 211,035 rows (size measuremments) and 14 columns for 90,332 unique species (AphiaIDs).
 
