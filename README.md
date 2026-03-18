@@ -5,14 +5,14 @@
 
 The file *data\_all\_112224.csv* provides data in MOBS as of 11-22-24 (MOBS 1.0) with current taxonomic information and species names pulled from the World Register of Marine Species (WoRMS; [https://www.marinespecies.org/](https://www.marinespecies.org/)). You can download this file, read it into your preferred software and begin analyses. This file has 181,531 rows (size measuremments) and 14 columns for 85,204 unique species (AphiaIDs).
 
-**NOTE:** The most up-to-date version is MOBS 2.0 Magnapinna. The separate data files named *mobs.pt1.csv*, *mobs.pt2.csv*, etc. will contain the most up-to-date size data and with additonal species and sizes (MOBS 2.0 Magnapinna).  If you would prefer to use the most recent data follow the section below titled Updating taxonomy from WoRMS.
+**NOTE:** The most up-to-date version is **MOBS 2.0 Magnapinna**. The separate data files named *mobs.pt1.csv*, *mobs.pt2.csv*, etc. will contain the most up-to-date size data and with additonal species and sizes (MOBS 2.0 Magnapinna).  If you would prefer to use the most recent data follow the section below titled Updating taxonomy from WoRMS.
 
 ### Citation Requirement
 If you use the MOBS database in any form—whether in publications, presentations, or derivative datasets—you are required to cite the following reference:
 
 McClain, C. R., Heim, N. A., Knope, M. L., Monarrez, P. M., Payne, J. L., Santos, I. T., & Webb, T. J. (2025). MOBS 1.0: A database of interspecific variation in marine organismal body sizes. *Global Ecology and Biogeography*, 34: e70062. https://doi.org/10.1111/geb.70062 
 
-McClain, C. R., Heim, N. A., Koch, N., Knope, M. L., Monarrez, P. M., Payne, J. L., Santos, I. T., & Webb, T. J. (2026) MOBS 2.0 (Magnapinna) A database of interspecific variation in marine organismal body sizes. 
+McClain, C. R., Heim, N. A., Koch, N., Knope, M. L., Monarrez, P. M., Payne, J. L., Santos, I. T., & Webb, T. J. (2026) MOBS 2.0 (Magnapinna) A database of interspecific variation in marine organismal body sizes.  https://doi.org/10.5281/zenodo.19078969
 
 Proper citation ensures credit to the creators and supports the continued development and maintenance of the database.
 
